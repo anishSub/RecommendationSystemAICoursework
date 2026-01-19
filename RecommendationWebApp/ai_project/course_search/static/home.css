@@ -1,0 +1,155 @@
+/* static/home.css */
+
+/* --- Global & Container --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Slightly darker background for contrast */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Wider container for grid */
+    margin: 40px auto;
+    padding: 0 20px; /* Side padding for mobile */
+}
+
+/* --- Header & Search (Kept mostly same) --- */
+.header-section { text-align: center; margin-bottom: 40px; }
+.header-section h1 { color: #2c3e50; margin-bottom: 10px; font-size: 2.5rem; }
+.header-section p { color: #7f8c8d; font-size: 1.1rem; }
+
+.search-box { margin-bottom: 50px; display: flex; justify-content: center; }
+.search-box form { width: 100%; max-width: 700px; display: flex; box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-radius: 8px; }
+.search-box input[type="text"] { flex-grow: 1; padding: 15px 20px; font-size: 16px; border: 1px solid #ddd; border-right: none; border-radius: 8px 0 0 8px; outline: none; }
+.search-box button { padding: 15px 30px; font-size: 16px; background-color: #3498db; color: white; border: 1px solid #3498db; border-radius: 0 8px 8px 0; cursor: pointer; font-weight: bold; transition: background 0.3s; }
+.search-box button:hover { background-color: #2980b9; }
+
+/* --- Results Header --- */
+.results-header h2 {
+    color: #34495e;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+}
+
+/* =========================================
+   NEW CARD GRID STYLING
+========================================= */
+
+/* 1. The Grid Container */
+.course-grid {
+    display: grid;
+    /* Auto-fill columns with a minimum width of 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px; /* Space between cards */
+    padding-bottom: 40px;
+}
+
+/* 2. The Card Itself */
+.course-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden; /* Keeps image corners rounded */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column; /* Stacks image, content, footer */
+    height: 100%; /* Ensures all cards in a row are same height */
+}
+
+.course-card:hover {
+    transform: translateY(-5px); /* Lifts up on hover */
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+/* 3. Card Image Section */
+.card-image {
+    position: relative;
+    height: 180px; /* Fixed height for consistency */
+    background-color: #e1e5ea; /* Placeholder color while loading */
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills space without distortion */
+}
+
+/* 4. Price Badge (Overlaid on Image) */
+.card-price-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.card-price-badge.free { background-color: #27ae60; color: white; }
+.card-price-badge.expensive { background-color: #c0392b; color: white; }
+.card-price-badge:not(.free):not(.expensive) { background-color: #f1c40f; color: #2c3e50; } /* For mid-range prices */
+
+
+/* 5. Card Content Section */
+.card-content {
+    padding: 20px;
+    flex-grow: 1; /* Pushes footer to the bottom */
+}
+
+.card-title {
+    margin: 0 0 15px 0;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    line-height: 1.4;
+    height: 3em; /* Limits title to 2 lines */
+    overflow: hidden;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+}
+.meta-item i { margin-right: 6px; }
+.meta-item.rating i { color: #f39c12; }
+.meta-item.subs i { color: #3498db; }
+
+/* 6. Card Footer & Button */
+.card-footer {
+    padding: 20px;
+    border-top: 1px solid #f0f0f0;
+    background-color: #fafafa;
+}
+
+.btn-card-view {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    color: #3498db;
+    border: 2px solid #3498db;
+    padding: 10px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.btn-card-view:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+/* --- No Results Message --- */
+.no-results { text-align: center; color: #e74c3c; background: #fdedec; padding: 20px; border-radius: 8px; border: 1px solid #fadbd8; }
