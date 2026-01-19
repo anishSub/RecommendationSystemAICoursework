@@ -1,0 +1,139 @@
+/* --- coursedetail.css --- */
+
+/* 1. Global Page Styling */
+body {
+    background-color: #f4f7f6; /* Soft grey background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Main Container (CENTERED & CARD LOOK) */
+.detail-container {
+    max-width: 850px;
+    margin: 60px auto; /* Top/Bottom: 60px, Left/Right: AUTO (Centers it) */
+    background: white;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Soft, modern shadow */
+}
+
+/* 3. Navigation (Back Link) */
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #95a5a6;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.back-link:hover {
+    color: #3498db;
+    transform: translateX(-5px); /* Subtle slide effect */
+}
+
+/* 4. Course Header Area */
+.course-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
+}
+
+.course-header h1 {
+    font-size: 2.3em; /* Larger title */
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+/* 5. Badges (Tags) */
+.badge-sub, .badge-rating {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-right: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.badge-sub {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.badge-rating {
+    background-color: #fff8e1;
+    color: #f57c00;
+}
+
+/* 6. The "Details" Box */
+.course-card-large {
+    background: #fafafa; /* Slightly darker inner background */
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+}
+
+.detail-row {
+    margin-bottom: 25px;
+    font-size: 1.2rem; /* Easier to read */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes Label to left, Value to right */
+    border-bottom: 1px dashed #e0e0e0;
+    padding-bottom: 15px;
+}
+
+.detail-row strong {
+    color: #555;
+}
+
+/* 7. Price Styling */
+.price-tag {
+    font-weight: 800;
+    font-size: 1.6rem;
+    color: #2c3e50;
+}
+
+.price-tag.free {
+    color: #27ae60;
+    background: #e8f8f5;
+    padding: 5px 15px;
+    border-radius: 8px;
+}
+
+/* 8. Call to Action Area */
+.action-area {
+    margin-top: 45px;
+    text-align: center;
+}
+
+.action-area p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #e74c3c;
+    color: white;
+    padding: 18px 50px; /* Bigger button */
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3); /* Red glow */
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #c0392b;
+    transform: translateY(-3px); /* Lifts up slightly */
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}

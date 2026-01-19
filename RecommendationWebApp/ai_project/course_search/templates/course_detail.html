@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ course.title }} - Details</title>
+    <link rel="stylesheet" href="{% static 'course_detail.css' %}">
+</head>
+<body>
+
+<div class="container detail-container">
+    <a href="{% url 'home' %}" class="back-link">← Back to Search</a>
+    
+    <div class="course-header">
+        <h1>{{ course.title }}</h1>
+        <span class="badge-sub">{{ course.subscribers }} Students</span>
+        <span class="badge-rating">★ {{ course.rating }} Rating</span>
+    </div>
+
+    <div class="course-card-large">
+        <div class="detail-row">
+            <strong>Price:</strong>
+            {% if course.price == 0 %}
+                <span class="price-tag free" style="font-size: 1.5em;">FREE</span>
+            {% else %}
+                <span class="price-tag" style="font-size: 1.5em; color: #2c3e50;">₹{{ course.price|floatformat:0 }}</span>
+            {% endif %}
+        </div>
+
+        <div class="detail-row">
+            <strong>Published Date:</strong>
+            <span>{{ course.published_time }}</span>
+        </div>
+
+        <div class="action-area">
+            <p>Ready to start learning?</p>
+            <a href="{{ course.url }}" target="_blank" class="cta-button">Go to Udemy Course</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
